@@ -81,8 +81,9 @@ PRODUCT_PACKAGES += \
 
 # Health HAL
 PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service \
-    android.hardware.health@2.1-impl
+    libhealthd.$(PRODUCT_PLATFORM)
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -100,3 +101,5 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
 
+PRODUCT_PACKAGES += \
+    lptools
