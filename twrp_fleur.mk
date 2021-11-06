@@ -31,6 +31,10 @@ PRODUCT_MODEL := fleur
 PRODUCT_MANUFACTURER := xiaomi
 PRODUCT_RELEASE_NAME := Poco M4 Pro
 
+# lptools
+PRODUCT_PACKAGES += \
+    lptools
+    
 # Vibrate
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.3-service.mtk.recovery
