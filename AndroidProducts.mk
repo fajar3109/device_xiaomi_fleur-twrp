@@ -17,4 +17,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-     $(LOCAL_DIR)/omni_fleur.mk
+     $(LOCAL_DIR)/twrp_fleur.mk
