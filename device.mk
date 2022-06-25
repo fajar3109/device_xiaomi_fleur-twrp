@@ -56,6 +56,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
+	android.hardware.vibrator@1.2-service.mtk.recovery
+    
+PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-mtkimpl.recovery
 
 PRODUCT_PACKAGES_DEBUG += \
