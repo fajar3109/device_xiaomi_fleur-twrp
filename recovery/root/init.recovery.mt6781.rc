@@ -8,7 +8,6 @@ on post-fs
     symlink /dev/block/mmcblk0boot0 /dev/block/platform/bootdevice/by-name/preloader_a
     symlink /dev/block/mmcblk0boot1 /dev/block/platform/bootdevice/by-name/preloader_b
 
-
     # Support A/B feature for combo emmc and ufs OTA update
     symlink /dev/block/platform/bootdevice/by-name/preloader_a /dev/block/platform/bootdevice/by-name/preloader_emmc_a
     symlink /dev/block/platform/bootdevice/by-name/preloader_b /dev/block/platform/bootdevice/by-name/preloader_emmc_b
@@ -26,14 +25,6 @@ on init
 
 on fs
     install_keyring
-
-service vibrator-1-2 /system/bin/hw/android.hardware.vibrator@1.2-service.mtk
-    class hal
-    disabled
-    user root
-    group root
-    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
-    seclabel u:r:recovery:s0
 
 service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
     class main
@@ -92,5 +83,4 @@ on property:twrp.decrypt.done=true
     stop gatekeeper-1-0
 
 on boot
-    start vibrator-1-2
     start health-hal-2-1
