@@ -1,19 +1,11 @@
 #Core system
-/dev/block/platform/bootdevice/by-name/system                                     /system          ext4                ro wait,slotselect,logical
-/dev/block/platform/bootdevice/by-name/vendor                                     /vendor          ext4                ro wait,slotselect,logical
-/dev/block/platform/bootdevice/by-name/product                                    /product         ext4                ro wait,slotselect,logical
-#system /system ext4 ro wait,slotselect,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
-#vendor /vendor ext4 ro wait,slotselect,avb,logical,first_stage_mount
-#product /product ext4 ro wait,slotselect,avb,logical,first_stage_mount
+system /system ext4 ro wait,slotselect,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
+vendor /vendor ext4 ro wait,slotselect,avb,logical,first_stage_mount
+product /product ext4 ro wait,slotselect,avb,logical,first_stage_mount
 
-#/dev/block/platform/bootdevice/by-name/vendor  /vendor  ext4  ro wait,verify=/dev/block/platform/bootdevice/by-name/metadata,slotselect
-
-
+/dev/block/platform/bootdevice/by-name/misc /misc emmc defaults defaults
 /dev/block/platform/bootdevice/by-name/vbmeta /vbmeta emmc defaults defaults
 /dev/block/platform/bootdevice/by-name/dtbo /dtbo emmc defaults defaults
 /dev/block/platform/bootdevice/by-name/boot /boot emmc defaults first_stage_mount,nofail,slotselect
 /dev/block/platform/bootdevice/by-name/userdata /data ext4 noatime,nosuid,nodev,discard,flush_merge,reserve_root=134217,resgid=1065,alloc_mode=reuse,fsync_mode=nobarrier,inlinecrypt wait,check,formattable,quota,latemount,resize,res$
-#/dev/block/platform/bootdevice/by-name/metadata /metadata ext4 noatime,nosuid,nodev,discard wait,check,formattable,first_stage_mount
-
-#/storage            f2fs      /data/media/0                                                         flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable;
-/sdcard1            vfat      /dev/block/mmcblk0p1         /dev/block/mmcblk0                       flags=fsflags=utf8;display="MicroSD";storage;wipeingui;removable
+/dev/block/platform/bootdevice/by-name/metadata /metadata ext4 noatime,nosuid,nodev,discard wait,check,formattable,first_stage_mount
