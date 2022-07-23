@@ -49,6 +49,12 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 # Boot Control HAL
 PRODUCT_PACKAGES += \
+    bootctrl.mt6781 \
+    libgptutils \
+    libz \
+    libcutils
+
+PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl.recovery \
     android.hardware.boot@1.1-impl \
     bootctrl.mt6781.recovery
@@ -58,6 +64,8 @@ PRODUCT_PACKAGES += \
     
 # Update Engine
 PRODUCT_PACKAGES += \
+    otapreopt_script \
+    cppreopts.sh \
     update_engine \
     update_engine_sideload \
     update_verifier
@@ -90,3 +98,4 @@ TARGET_RECOVERY_DEVICE_MODULES += \
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
+
