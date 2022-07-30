@@ -22,8 +22,8 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.3-service.mtk.recovery
 
 # Dynamic Partitions
-PRODUCT_BUILD_SUPER_PARTITION := true
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
+#PRODUCT_BUILD_SUPER_PARTITION := true
+#PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
