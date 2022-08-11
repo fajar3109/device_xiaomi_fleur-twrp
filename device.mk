@@ -22,11 +22,8 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.3-service.mtk.recovery
 
 # Dynamic Partitions
-#PRODUCT_BUILD_SUPER_PARTITION := true
-#PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-# API
-PRODUCT_SHIPPING_API_LEVEL := 30
+PRODUCT_BUILD_SUPER_PARTITION := true
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Virtual A/B
 ENABLE_VIRTUAL_AB := true
@@ -44,21 +41,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
-
-# Boot Control HAL
-PRODUCT_PACKAGES += \
-    bootctrl.mt6781 \
-    libgptutils \
-    libz \
-    libcutils
-
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.1-impl.recovery \
-    android.hardware.boot@1.1-impl \
-    bootctrl.mt6781.recovery
-
-PRODUCT_PACKAGES += \
-	android.hardware.vibrator@1.2-service.mtk.recovery
     
 # Update Engine
 PRODUCT_PACKAGES += \
@@ -70,9 +52,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
-
-# Dynam
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Fastbootd
 PRODUCT_PACKAGES += \
