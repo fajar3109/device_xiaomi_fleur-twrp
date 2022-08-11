@@ -18,6 +18,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),spaced)
+ifeq ($(TARGET_DEVICE), fleur)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif

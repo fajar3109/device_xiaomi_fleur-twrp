@@ -7,8 +7,6 @@ on fs
     install_keyring
 
     write /sys/class/power_supply/usb/otg_switch 1
-    write /sys/class/oplus_chg/usb/otg_switch 1
-
 on post-fs
 
 service keystore_auth /system/bin/keystore_auth
@@ -50,12 +48,6 @@ service mobicore /vendor/bin/mcDriverDaemon --P1 /mnt/vendor/persist/mcRegistry 
         -r /odm/vendor/app/mcRegistry/09070000000000000000000000000000.drbin
     user root
     group root
-    disabled
-    seclabel u:r:recovery:s0
-
-service hal_cryptoeng_oppo /system/bin/hw/vendor.oplus.hardware.cryptoeng@1.0-service
-    user root
-    group root input sdcard_rw sdcard_r
     disabled
     seclabel u:r:recovery:s0
 
