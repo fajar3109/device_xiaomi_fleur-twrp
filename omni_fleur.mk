@@ -27,11 +27,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, device/xiaomi/fleur/device.mk)
 
 # Inherit some common TWRP stuff.
-$(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, vendor/pb/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := fleur
-PRODUCT_NAME := twrp_fleur
+PRODUCT_NAME := omni_fleur
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := fleur
 PRODUCT_MANUFACTURER := xiaomi
